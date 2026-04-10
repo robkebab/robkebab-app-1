@@ -25,44 +25,50 @@ const features = [
     title: "Real-Time Monitoring",
     description:
       "Track every request, response time, and status code as it happens. No lag, no sampling — full fidelity observability.",
+    iconClass: "bg-blue-100 text-blue-600 dark:bg-blue-900/30 dark:text-blue-400",
   },
   {
     icon: AlertCircle,
     title: "Smart Alerting",
     description:
       "Set thresholds on latency, error rate, or status codes. Get notified via Slack, PagerDuty, or webhooks before users notice.",
+    iconClass: "bg-amber-100 text-amber-600 dark:bg-amber-900/30 dark:text-amber-400",
   },
   {
     icon: BarChart3,
     title: "Performance Analytics",
     description:
       "P50, P95, P99 latency breakdowns. Identify slow endpoints, track trends, and benchmark improvements over time.",
+    iconClass: "bg-violet-100 text-violet-600 dark:bg-violet-900/30 dark:text-violet-400",
   },
   {
     icon: Webhook,
     title: "Webhook Inspector",
     description:
       "Capture, replay, and debug incoming webhooks. Share payload snapshots with your team. No more guesswork.",
+    iconClass: "bg-teal-100 text-teal-600 dark:bg-teal-900/30 dark:text-teal-400",
   },
   {
     icon: Shield,
     title: "Uptime Checks",
     description:
       "Global uptime monitoring from 20+ regions. Instant alerts when your API goes down with first-byte timing.",
+    iconClass: "bg-green-100 text-green-600 dark:bg-green-900/30 dark:text-green-400",
   },
   {
     icon: Users,
     title: "Team Collaboration",
     description:
       "Shared dashboards, alert routing, and role-based access. Keep your whole team on the same page.",
+    iconClass: "bg-rose-100 text-rose-600 dark:bg-rose-900/30 dark:text-rose-400",
   },
 ];
 
 const stats = [
-  { value: "99.99%", label: "Uptime SLA" },
-  { value: "<50ms", label: "Monitoring latency" },
-  { value: "12,000+", label: "Developer teams" },
-  { value: "4B+", label: "Requests tracked daily" },
+  { value: "99.99%", label: "Uptime SLA", color: "text-indigo-600 dark:text-indigo-400" },
+  { value: "<50ms", label: "Monitoring latency", color: "text-violet-600 dark:text-violet-400" },
+  { value: "12,000+", label: "Developer teams", color: "text-teal-600 dark:text-teal-400" },
+  { value: "4B+", label: "Requests tracked daily", color: "text-amber-600 dark:text-amber-400" },
 ];
 
 const plans = [
@@ -206,8 +212,10 @@ export default function Home() {
 
       {/* Hero */}
       <section className="relative overflow-hidden border-b border-border/50">
-        <div className="absolute inset-0 -z-10">
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 h-[600px] w-[900px] rounded-full bg-primary/5 blur-3xl" />
+        <div className="absolute inset-0 -z-10 overflow-hidden">
+          <div className="absolute -top-40 left-1/3 h-[600px] w-[600px] rounded-full bg-indigo-400/20 blur-3xl" />
+          <div className="absolute -top-20 right-1/4 h-[500px] w-[500px] rounded-full bg-cyan-400/15 blur-3xl" />
+          <div className="absolute top-60 left-1/2 h-[400px] w-[700px] rounded-full bg-violet-400/10 blur-3xl" />
         </div>
         <div className="mx-auto max-w-7xl px-4 py-24 sm:px-6 sm:py-32 lg:px-8 lg:py-40">
           <div className="mx-auto max-w-3xl text-center">
@@ -217,7 +225,9 @@ export default function Home() {
             </Badge>
             <h1 className="text-4xl font-bold tracking-tight sm:text-6xl lg:text-7xl">
               Monitor your APIs{" "}
-              <span className="text-primary">with confidence</span>
+              <span className="bg-gradient-to-r from-indigo-600 via-violet-600 to-cyan-500 bg-clip-text text-transparent">
+                with confidence
+              </span>
             </h1>
             <p className="mt-6 text-lg leading-8 text-muted-foreground sm:text-xl max-w-2xl mx-auto">
               DevPulse gives developer teams real-time visibility into every API request, error, and latency spike —
@@ -325,8 +335,8 @@ export default function Home() {
               return (
                 <Card key={feature.title} className="group hover:shadow-md transition-shadow">
                   <CardHeader className="pb-3">
-                    <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors">
-                      <Icon className="h-5 w-5 text-primary" />
+                    <div className={`mb-3 flex h-10 w-10 items-center justify-center rounded-lg transition-colors ${feature.iconClass}`}>
+                      <Icon className="h-5 w-5" />
                     </div>
                     <h3 className="font-semibold">{feature.title}</h3>
                   </CardHeader>
@@ -376,7 +386,7 @@ export default function Home() {
           <div className="grid grid-cols-2 gap-8 lg:grid-cols-4">
             {stats.map((stat) => (
               <div key={stat.label} className="text-center">
-                <p className="text-4xl font-bold tracking-tight text-primary">{stat.value}</p>
+                <p className={`text-4xl font-bold tracking-tight ${stat.color}`}>{stat.value}</p>
                 <p className="mt-2 text-sm text-muted-foreground">{stat.label}</p>
               </div>
             ))}
