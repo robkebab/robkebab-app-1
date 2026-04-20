@@ -42,7 +42,7 @@ export function ChatWidget() {
       {open && (
         <div className="fixed bottom-24 right-4 z-50 flex w-[360px] max-w-[calc(100vw-2rem)] flex-col rounded-2xl border border-border bg-background shadow-2xl">
           {/* Header */}
-          <div className="flex items-center gap-3 rounded-t-2xl bg-gradient-to-r from-indigo-600 to-violet-600 px-4 py-3">
+          <div className="flex items-center gap-3 rounded-t-2xl bg-gradient-to-r from-emerald-600 to-teal-500 px-4 py-3">
             <div className="flex h-8 w-8 items-center justify-center rounded-full bg-white/20">
               <Activity className="h-4 w-4 text-white" />
             </div>
@@ -62,8 +62,8 @@ export function ChatWidget() {
           <div className="flex flex-col gap-3 overflow-y-auto p-4 h-80">
             {messages.length === 0 && (
               <div className="flex flex-col items-center justify-center h-full gap-3 text-center">
-                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-indigo-100 dark:bg-indigo-900/30">
-                  <Bot className="h-6 w-6 text-indigo-600 dark:text-indigo-400" />
+                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-emerald-100 dark:bg-emerald-900/30">
+                  <Bot className="h-6 w-6 text-emerald-600 dark:text-emerald-400" />
                 </div>
                 <div>
                   <p className="text-sm font-medium">Hi! I&apos;m the DevPulse assistant.</p>
@@ -95,14 +95,14 @@ export function ChatWidget() {
                   className={`flex gap-2 ${message.role === "user" ? "flex-row-reverse" : "flex-row"}`}
                 >
                   {message.role === "assistant" && (
-                    <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-indigo-100 dark:bg-indigo-900/30 mt-0.5">
-                      <Bot className="h-3.5 w-3.5 text-indigo-600 dark:text-indigo-400" />
+                    <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-emerald-100 dark:bg-emerald-900/30 mt-0.5">
+                      <Bot className="h-3.5 w-3.5 text-emerald-600 dark:text-emerald-400" />
                     </div>
                   )}
                   <div
                     className={`max-w-[75%] rounded-2xl px-3 py-2 text-sm leading-relaxed ${
                       message.role === "user"
-                        ? "bg-indigo-600 text-white rounded-tr-sm"
+                        ? "bg-emerald-600 text-white rounded-tr-sm"
                         : "bg-muted text-foreground rounded-tl-sm"
                     }`}
                   >
@@ -114,8 +114,8 @@ export function ChatWidget() {
 
             {isLoading && (
               <div className="flex gap-2">
-                <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-indigo-100 dark:bg-indigo-900/30">
-                  <Bot className="h-3.5 w-3.5 text-indigo-600 dark:text-indigo-400" />
+                <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-emerald-100 dark:bg-emerald-900/30">
+                  <Bot className="h-3.5 w-3.5 text-emerald-600 dark:text-emerald-400" />
                 </div>
                 <div className="rounded-2xl rounded-tl-sm bg-muted px-3 py-2">
                   <span className="flex gap-1">
@@ -142,7 +142,7 @@ export function ChatWidget() {
             />
             <Button
               size="icon"
-              className="h-9 w-9 shrink-0 bg-indigo-600 hover:bg-indigo-700"
+              className="h-9 w-9 shrink-0 bg-emerald-600 hover:bg-emerald-700"
               onClick={handleSend}
               disabled={!input.trim() || isLoading}
             >
@@ -155,7 +155,7 @@ export function ChatWidget() {
       {/* Toggle bubble */}
       <button
         onClick={() => setOpen((v) => !v)}
-        className="fixed bottom-4 right-4 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-indigo-600 to-violet-600 shadow-lg hover:shadow-xl hover:scale-105 transition-all"
+        className="fixed bottom-4 right-4 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-emerald-600 to-teal-500 shadow-lg hover:shadow-xl hover:scale-105 transition-all"
         aria-label="Open chat"
       >
         {open ? (
