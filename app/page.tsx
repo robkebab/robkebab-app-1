@@ -39,7 +39,7 @@ const features = [
     title: "Performance Analytics",
     description:
       "P50, P95, P99 latency breakdowns. Identify slow endpoints, track trends, and benchmark improvements over time.",
-    iconClass: "bg-violet-100 text-violet-600 dark:bg-violet-900/30 dark:text-violet-400",
+    iconClass: "bg-emerald-100 text-emerald-600 dark:bg-emerald-900/30 dark:text-emerald-400",
   },
   {
     icon: Webhook,
@@ -65,8 +65,8 @@ const features = [
 ];
 
 const stats = [
-  { value: "99.99%", label: "Uptime SLA", color: "text-indigo-600 dark:text-indigo-400" },
-  { value: "<50ms", label: "Monitoring latency", color: "text-violet-600 dark:text-violet-400" },
+  { value: "99.99%", label: "Uptime SLA", color: "text-emerald-600 dark:text-emerald-400" },
+  { value: "<50ms", label: "Monitoring latency", color: "text-teal-600 dark:text-teal-400" },
   { value: "12,000+", label: "Developer teams", color: "text-teal-600 dark:text-teal-400" },
   { value: "4B+", label: "Requests tracked daily", color: "text-amber-600 dark:text-amber-400" },
 ];
@@ -213,9 +213,9 @@ export default function Home() {
       {/* Hero */}
       <section className="relative overflow-hidden border-b border-border/50">
         <div className="absolute inset-0 -z-10 overflow-hidden">
-          <div className="absolute -top-40 left-1/3 h-[600px] w-[600px] rounded-full bg-indigo-400/20 blur-3xl" />
-          <div className="absolute -top-20 right-1/4 h-[500px] w-[500px] rounded-full bg-cyan-400/15 blur-3xl" />
-          <div className="absolute top-60 left-1/2 h-[400px] w-[700px] rounded-full bg-violet-400/10 blur-3xl" />
+          <div className="absolute -top-40 left-1/3 h-[600px] w-[600px] rounded-full bg-emerald-400/20 blur-3xl" />
+          <div className="absolute -top-20 right-1/4 h-[500px] w-[500px] rounded-full bg-teal-400/15 blur-3xl" />
+          <div className="absolute top-60 left-1/2 h-[400px] w-[700px] rounded-full bg-green-400/10 blur-3xl" />
         </div>
         <div className="mx-auto max-w-7xl px-4 py-24 sm:px-6 sm:py-32 lg:px-8 lg:py-40">
           <div className="mx-auto max-w-3xl text-center">
@@ -225,7 +225,7 @@ export default function Home() {
             </Badge>
             <h1 className="text-4xl font-bold tracking-tight sm:text-6xl lg:text-7xl">
               Monitor your APIs{" "}
-              <span className="bg-gradient-to-r from-indigo-600 via-violet-600 to-cyan-500 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-emerald-600 via-teal-500 to-cyan-400 bg-clip-text text-transparent">
                 with confidence
               </span>
             </h1>
