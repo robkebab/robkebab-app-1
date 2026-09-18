@@ -25,21 +25,21 @@ const features = [
     title: "Real-Time Monitoring",
     description:
       "Track every request, response time, and status code as it happens. No lag, no sampling — full fidelity observability.",
-    iconClass: "bg-blue-100 text-blue-600 dark:bg-blue-900/30 dark:text-blue-400",
+    iconClass: "bg-green-100 text-green-600 dark:bg-green-900/30 dark:text-green-400",
   },
   {
     icon: AlertCircle,
     title: "Smart Alerting",
     description:
       "Set thresholds on latency, error rate, or status codes. Get notified via Slack, PagerDuty, or webhooks before users notice.",
-    iconClass: "bg-amber-100 text-amber-600 dark:bg-amber-900/30 dark:text-amber-400",
+    iconClass: "bg-emerald-100 text-emerald-600 dark:bg-emerald-900/30 dark:text-emerald-400",
   },
   {
     icon: BarChart3,
     title: "Performance Analytics",
     description:
       "P50, P95, P99 latency breakdowns. Identify slow endpoints, track trends, and benchmark improvements over time.",
-    iconClass: "bg-violet-100 text-violet-600 dark:bg-violet-900/30 dark:text-violet-400",
+    iconClass: "bg-lime-100 text-lime-600 dark:bg-lime-900/30 dark:text-lime-400",
   },
   {
     icon: Webhook,
@@ -60,15 +60,15 @@ const features = [
     title: "Team Collaboration",
     description:
       "Shared dashboards, alert routing, and role-based access. Keep your whole team on the same page.",
-    iconClass: "bg-rose-100 text-rose-600 dark:bg-rose-900/30 dark:text-rose-400",
+    iconClass: "bg-emerald-100 text-emerald-600 dark:bg-emerald-900/30 dark:text-emerald-400",
   },
 ];
 
 const stats = [
-  { value: "99.99%", label: "Uptime SLA", color: "text-indigo-600 dark:text-indigo-400" },
-  { value: "<50ms", label: "Monitoring latency", color: "text-violet-600 dark:text-violet-400" },
+  { value: "99.99%", label: "Uptime SLA", color: "text-green-600 dark:text-green-400" },
+  { value: "<50ms", label: "Monitoring latency", color: "text-emerald-600 dark:text-emerald-400" },
   { value: "12,000+", label: "Developer teams", color: "text-teal-600 dark:text-teal-400" },
-  { value: "4B+", label: "Requests tracked daily", color: "text-amber-600 dark:text-amber-400" },
+  { value: "4B+", label: "Requests tracked daily", color: "text-lime-600 dark:text-lime-400" },
 ];
 
 const plans = [
@@ -199,7 +199,7 @@ export default function Home() {
             <Button variant="ghost" size="sm" className="hidden md:flex">
               Sign in
             </Button>
-            <Button size="sm">
+            <Button size="sm" className="bg-green-600 hover:bg-green-700 text-white">
               Get started free
               <ChevronRight className="h-4 w-4" />
             </Button>
@@ -213,9 +213,9 @@ export default function Home() {
       {/* Hero */}
       <section className="relative overflow-hidden border-b border-border/50">
         <div className="absolute inset-0 -z-10 overflow-hidden">
-          <div className="absolute -top-40 left-1/3 h-[600px] w-[600px] rounded-full bg-indigo-400/20 blur-3xl" />
-          <div className="absolute -top-20 right-1/4 h-[500px] w-[500px] rounded-full bg-cyan-400/15 blur-3xl" />
-          <div className="absolute top-60 left-1/2 h-[400px] w-[700px] rounded-full bg-violet-400/10 blur-3xl" />
+          <div className="absolute -top-40 left-1/3 h-[600px] w-[600px] rounded-full bg-green-400/25 blur-3xl" />
+          <div className="absolute -top-20 right-1/4 h-[500px] w-[500px] rounded-full bg-emerald-400/20 blur-3xl" />
+          <div className="absolute top-60 left-1/2 h-[400px] w-[700px] rounded-full bg-lime-400/15 blur-3xl" />
         </div>
         <div className="mx-auto max-w-7xl px-4 py-24 sm:px-6 sm:py-32 lg:px-8 lg:py-40">
           <div className="mx-auto max-w-3xl text-center">
@@ -225,7 +225,7 @@ export default function Home() {
             </Badge>
             <h1 className="text-4xl font-bold tracking-tight sm:text-6xl lg:text-7xl">
               Monitor your APIs{" "}
-              <span className="bg-gradient-to-r from-indigo-600 via-violet-600 to-cyan-500 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-green-600 via-emerald-500 to-lime-400 bg-clip-text text-transparent">
                 with confidence
               </span>
             </h1>
@@ -234,7 +234,7 @@ export default function Home() {
               so you catch problems before your users do.
             </p>
             <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Button size="lg" className="w-full sm:w-auto px-8">
+              <Button size="lg" className="w-full sm:w-auto px-8 bg-green-600 hover:bg-green-700 text-white">
                 Start for free
                 <ChevronRight className="h-4 w-4" />
               </Button>
@@ -284,11 +284,10 @@ export default function Home() {
                     { method: "DELETE", path: "/api/sessions/abc123", status: 204, ms: "18ms" },
                   ].map((req, i) => (
                     <div key={i} className="flex items-center gap-3 text-muted-foreground">
-                      <span className={`w-12 text-center rounded px-1.5 py-0.5 text-[10px] font-semibold ${
-                        req.method === "GET" ? "bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400" :
-                        req.method === "POST" ? "bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400" :
-                        "bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400"
-                      }`}>{req.method}</span>
+                      <span className={`w-12 text-center rounded px-1.5 py-0.5 text-[10px] font-semibold ${req.method === "GET" ? "bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400" :
+                          req.method === "POST" ? "bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400" :
+                            "bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400"
+                        }`}>{req.method}</span>
                       <span className="flex-1 truncate">{req.path}</span>
                       <span className="text-green-600 dark:text-green-400">{req.status}</span>
                       <span className="w-12 text-right">{req.ms}</span>
@@ -436,7 +435,7 @@ export default function Home() {
                       </li>
                     ))}
                   </ul>
-                  <Button variant={plan.ctaVariant} className="w-full">
+                  <Button variant={plan.ctaVariant} className={`w-full ${plan.ctaVariant === "default" ? "bg-green-600 hover:bg-green-700 text-white" : ""}`}>
                     {plan.cta}
                   </Button>
                 </CardContent>
@@ -506,7 +505,7 @@ export default function Home() {
             Join 12,000+ developer teams who ship with confidence. No credit card required.
           </p>
           <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button size="lg" className="w-full sm:w-auto px-10">
+            <Button size="lg" className="w-full sm:w-auto px-10 bg-green-600 hover:bg-green-700 text-white">
               Get started for free
               <ChevronRight className="h-4 w-4" />
             </Button>
